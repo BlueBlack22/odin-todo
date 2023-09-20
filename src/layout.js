@@ -17,6 +17,8 @@ function createHeader() {
 
 function createSidebar() {
     const sidebar = createDiv('sidebar');
+    sidebar.appendChild(createDiv('project-default', 'Default Project'));
+
 
     return sidebar;
 };
