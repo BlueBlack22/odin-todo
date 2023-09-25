@@ -32,6 +32,10 @@ body {
     grid-column: 1 / 2;
 }
 
+.project-default {
+    border: 1px solid black;
+}
+
 .task-box {
     background-color: blue;
     grid-row: 2 / 3;
