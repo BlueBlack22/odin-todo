@@ -1,4 +1,4 @@
-import { createDiv, createPara, createList } from "./creators";
+import { createDiv, createPara, createList } from "./domCreators";
 
 function createLayout() {
     const content = document.getElementById('content');
