@@ -5,5 +5,7 @@ import { tasks } from './tasks';
 createLayout();
 
 tasks.createTask('Go to the gym', 'leg day :(', '01.10.2023', 'low');
-tasks.createTask('Go to sleep', 'at least 8h', '10.10.2023', 'medium');
-console.log(tasks.getTask(1));
+tasks.createTask('Go to sleep1', 'at least 8h', '10.10.2023', 'medium');
+tasks.createTask('Go to sleep2', 'at least 8h', '10.10.2023', 'medium');
+tasks.createTask('Go to sleep3', 'at least 8h', '10.10.2023', 'medium');
+console.log(tasks.getTaskList());
