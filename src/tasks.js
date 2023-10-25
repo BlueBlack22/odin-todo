@@ -24,7 +24,7 @@ const tasks = (() => {
     const findIndexByID = (id) => {
         for (const i in taskList) {
             if (taskList[i].id == id) {
-                return i
+                return i;
             }
         }
     };
@@ -73,10 +73,10 @@ const tasks = (() => {
     };
 
     return { 
-        createTask, 
+        createTask,
+        deleteTask, 
         getTask, 
         getTaskList,  
-        deleteTask,
         changeTitle,
         changeDescription,
         changeDueDate,
