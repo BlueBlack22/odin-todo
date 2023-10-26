@@ -3,7 +3,7 @@ import { tasks } from "./tasks";
 
 const sidebarController = (() => {
 
-    const createProjects = () => {
+    const displayProjects = () => {
         const projects = tasks.getProjectList();
 
         for (const i in projects) {
@@ -11,8 +11,19 @@ const sidebarController = (() => {
         }
     };
 
+    const displayTask = (projectName) => {
+        const matchingIndexes = tasks.findIndexByProjectName(projectName);
+
+        for (const i in matchingIndexes) {
+            const task = tasks.getTask(matchingIndexes[i]);
+
+            document.querySelector('.task-box').appendChild(createDiv('task', task.title));
+        }
+    };
+
     return {
-        createProjects
+        displayProjects,
+        displayTask
     };
 })();
 

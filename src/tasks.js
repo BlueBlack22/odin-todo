@@ -54,6 +54,18 @@ const tasks = (() => {
         }
     };
 
+    const findIndexByProjectName = (projectName) => {
+        const matchingIndexes = [];
+
+        for (const i in taskList) {
+            if (taskList[i].project == projectName) {
+                matchingIndexes.push(i);
+            }
+        }
+
+        return matchingIndexes;
+    };
+
     const deleteTask = (id) => {
         const index = findIndexByID(id);
         taskList.splice(index, 1);
@@ -101,7 +113,8 @@ const tasks = (() => {
         createTask,
         deleteTask, 
         getTask, 
-        getTaskList,  
+        getTaskList,
+        findIndexByProjectName,  
         changeTitle,
         changeDescription,
         changeDueDate,
