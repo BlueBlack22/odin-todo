@@ -1,0 +1,5 @@
+const sidebarController = (() => {
+    
+})();
+
+export { sidebarController };

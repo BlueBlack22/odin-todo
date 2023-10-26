@@ -1,5 +1,6 @@
 const tasks = (() => {
     const taskList = [];
+    const projectList = ['default'];
     let taskID = 0;
 
     const createTask = (title, description, dueDate, priority, status = false, project = 'default') => {
@@ -19,6 +20,26 @@ const tasks = (() => {
             project,
             id
         }
+    };
+
+    const createProject = (projectName) => {
+        if (projectList.includes(projectName)) {
+            return false;
+        } else {
+            projectList.push(projectName)
+        }
+    };
+
+    const removeProject = (projectName) => {
+        
+    };
+
+    const getProjectName = (index) => {
+        return projectList[index];        
+    };
+
+    const getProjectList = () => {
+        return projectList;
     };
 
     const findIndexByID = (id) => {
@@ -82,7 +103,10 @@ const tasks = (() => {
         changeDueDate,
         changePriority,
         changeStatus,
-        changeProject
+        changeProject,
+        createProject,
+        getProjectName,
+        getProjectList
     };
 })();
 
