@@ -30,10 +30,12 @@ body {
     background-color: aquamarine;
     grid-row: 2 / 3;
     grid-column: 1 / 2;
+    padding: 1vw;
 }
 
-.project-default {
+.sidebar-header {
     border: 1px solid black;
+    font-size: 1.5rem;
 }
 
 .task-box {
