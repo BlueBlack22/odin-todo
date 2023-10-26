@@ -31,7 +31,11 @@ const tasks = (() => {
     };
 
     const removeProject = (projectName) => {
-        
+        for (const i in projectList) {
+            if (projectList[i] == projectName && projectName != 'default') {
+                projectList.splice(i, 1);
+            }
+        }
     };
 
     const getProjectName = (index) => {
@@ -105,6 +109,7 @@ const tasks = (() => {
         changeStatus,
         changeProject,
         createProject,
+        removeProject,
         getProjectName,
         getProjectList
     };
