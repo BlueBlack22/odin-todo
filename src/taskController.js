@@ -2,10 +2,6 @@ import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
 
 const taskController = (() => {
-
-    // const createTableStructure = () => {
-    //     const 
-    // };
     
     const displayTask = (projectName) => {
         const matchingIndexes = tasks.findIndexByProjectName(projectName);
