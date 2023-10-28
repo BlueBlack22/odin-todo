@@ -3,6 +3,7 @@ import { createLayout } from "./layout";
 import { tasks } from './tasks';
 import { sidebarController } from './sidebarController';
 import { createDiv, createPara, createList } from "./domCreators";
+import { taskController } from './taskController';
 
 createLayout();
 
@@ -12,4 +13,4 @@ tasks.createTask('Go to sleep2', 'at least 8h', '10.10.2023', 'medium');
 tasks.createTask('Go to sleep3', 'at least 8h', '10.10.2023', 'medium');
 
 sidebarController.displayProjects();
-sidebarController.displayTask('default');
+taskController.displayTask('default');

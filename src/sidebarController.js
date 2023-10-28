@@ -11,19 +11,8 @@ const sidebarController = (() => {
         }
     };
 
-    const displayTask = (projectName) => {
-        const matchingIndexes = tasks.findIndexByProjectName(projectName);
-
-        for (const i in matchingIndexes) {
-            const task = tasks.getTask(matchingIndexes[i]);
-
-            document.querySelector('.task-box').appendChild(createDiv('task', task.title));
-        }
-    };
-
     return {
-        displayProjects,
-        displayTask
+        displayProjects
     };
 })();
 
