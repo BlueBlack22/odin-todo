@@ -5,7 +5,7 @@ function createLayout() {
 
     content.appendChild(createHeader());
     content.appendChild(createSidebar());
-    content.appendChild(createTaskBox());
+    content.appendChild(createMainBox());
 };
 
 function createHeader() {
@@ -22,10 +22,10 @@ function createSidebar() {
     return sidebar;
 };
 
-function createTaskBox() {
-    const taskBox = createDiv('task-box');
+function createMainBox() {
+    const mainBox = createDiv('main-box');
 
-    return taskBox;
+    return mainBox;
 };
 
 export { createLayout }
