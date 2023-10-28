@@ -40,4 +40,18 @@ function createList(className, text) {
     return li;
 };
 
-export { createDiv, createPara, createList }
+function createDataCell(className, text) {
+    const td = document.createElement('td');
+    
+    if (className !== undefined) {
+        td.classList.add(className);
+    }
+
+    if (text !== undefined) {
+        td.textContent = text;
+    }
+
+    return td;
+};
+
+export { createDiv, createPara, createList, createDataCell }
