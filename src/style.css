@@ -48,3 +48,7 @@ body {
 .strip-box {
     padding: 3vw;
 }
+
+.strip {
+    display: flex;
+}
