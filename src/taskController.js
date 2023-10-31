@@ -15,13 +15,20 @@ const taskController = (() => {
     
     const createTaskStrip = (title, description, dueDate) => {
         const strip = createDiv('strip', undefined);
+        const left = createDiv('strip-left', undefined);
+        const right = createDiv('strip-right', undefined);
+
         const sTitle = createDiv('strip-title', title);
         const sDesc = createDiv('strip-desc', description);
         const sDate = createDiv('strip-date', dueDate);
         
-        strip.appendChild(sTitle);
-        strip.appendChild(sDesc);
-        strip.appendChild(sDate);
+        left.appendChild(sTitle);
+        left.appendChild(sDesc);
+        
+        right.appendChild(sDate);
+
+        strip.appendChild(left);
+        strip.appendChild(right);
 
         return strip;
     };

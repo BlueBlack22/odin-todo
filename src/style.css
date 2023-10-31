@@ -51,7 +51,6 @@ body {
 
 .strip-box {
     padding: 3vw;
-    border: 1px solid yellow;
     width: 50rem;
 }
 
@@ -60,6 +59,13 @@ body {
     margin: 0.5rem 0;
     padding: 0.1rem 0.5rem;
     display: flex;
-    align-items: center;
+    justify-content: space-between;
     height: 3rem;
+}
+
+.strip-left,
+.strip-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
