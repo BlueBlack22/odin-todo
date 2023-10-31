@@ -7,8 +7,19 @@ const sidebarController = (() => {
         const projects = tasks.getProjectList();
 
         for (const i in projects) {
-            document.querySelector('.sidebar').appendChild(createDiv('project-box', projects[i]));
+            document.querySelector('.sidebar').appendChild(createProjectBar(projects[i]));
         }
+    };
+
+    const createProjectBar = (name) => {
+        const strip = createDiv('project-bar', undefined);
+
+        const deleteBtn = document.createElement('button');
+
+        strip.appendChild(createDiv('project-bar-name', name));
+        strip.appendChild(deleteBtn);
+
+        return strip;        
     };
 
     return {
