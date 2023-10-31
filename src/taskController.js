@@ -22,10 +22,19 @@ const taskController = (() => {
         const sDesc = createDiv('strip-desc', description);
         const sDate = createDiv('strip-date', dueDate);
         
+        const checkBox = document.createElement('input');
+        checkBox.setAttribute('type', 'checkbox');
+        
+        const editBtn = document.createElement('button');
+        const deleteBtn = document.createElement('button');
+
+        left.appendChild(checkBox);
         left.appendChild(sTitle);
         left.appendChild(sDesc);
-        
+
         right.appendChild(sDate);
+        right.appendChild(editBtn);
+        right.appendChild(deleteBtn);
 
         strip.appendChild(left);
         strip.appendChild(right);
