@@ -42,8 +42,14 @@ const taskController = (() => {
         return strip;
     };
 
+    const displayProjectName = (projectName) => {
+        const name = createDiv('project-name', projectName);
+        document.querySelector('.strip-box').appendChild(name);
+    };
+
     return {
-        displayTask
+        displayTask,
+        displayProjectName
     };
 })();
 
