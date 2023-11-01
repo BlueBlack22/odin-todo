@@ -31,10 +31,16 @@ const tasks = (() => {
     };
 
     const deleteProject = (projectName) => {
-        for (const i in projectList) {
-            if (projectList[i] == projectName && projectName != 'default') {
-                projectList.splice(i, 1);
+        if (projectName !== 'default') {
+            for (const i in projectList) {
+                if (projectList[i] === projectName) {
+                    projectList.splice(i, 1);
+                }
             }
+
+            deleteTasksInProject(projectName);
+        } else {
+            return false;
         }
     };
 
