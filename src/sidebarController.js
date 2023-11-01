@@ -22,8 +22,14 @@ const sidebarController = (() => {
         return strip;        
     };
 
+    const displayAddProject = () => {
+        const strip = createDiv('project-add', 'Add new project');
+        document.querySelector('.sidebar').appendChild(strip);
+    };
+
     return {
-        displayProjects
+        displayProjects,
+        displayAddProject
     };
 })();
 

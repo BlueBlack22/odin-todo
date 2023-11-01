@@ -16,3 +16,4 @@ tasks.createTask('Go to sleep3', 'at least 8h', '10.10.2023', 'medium');
 sidebarController.displayProjects();
 taskController.displayProjectName('default');
 taskController.displayTask('default');
+sidebarController.displayAddProject();

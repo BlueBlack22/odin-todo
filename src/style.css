@@ -35,9 +35,13 @@ body {
     overflow: hidden;
 }
 
-.sidebar-header {
+.sidebar-header,
+.project-add,
+.project-bar {
     border: 1px solid black;
     font-size: 1.5rem;
+    margin: 0.5rem 0;
+    padding: 0.1rem 0.5rem;
 }
 
 .project-bar {
@@ -45,8 +49,6 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin: 0.5rem 0;
-    padding: 0.1rem 0.5rem;
 }
 
 .main-box {
