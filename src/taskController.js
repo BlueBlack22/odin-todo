@@ -1,5 +1,7 @@
 import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
+import editImg from "./img/edit.svg";
+import deleteImg from "./img/delete.svg";
 
 const taskController = (() => {
     
@@ -25,8 +27,15 @@ const taskController = (() => {
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
         
-        const editBtn = document.createElement('button');
-        const deleteBtn = document.createElement('button');
+        const editBtn = document.createElement('img');
+        editBtn.src = editImg;
+        editBtn.classList.add('strip-icon');
+        editBtn.addEventListener('click', (e) => console.log('edit'));
+
+        const deleteBtn = document.createElement('img');
+        deleteBtn.src = deleteImg;
+        deleteBtn.classList.add('strip-icon');
+        deleteBtn.addEventListener('click', (e) => console.log('remove'));
 
         left.appendChild(checkBox);
         left.appendChild(sTitle);

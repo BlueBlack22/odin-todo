@@ -80,3 +80,8 @@ body {
     align-items: center;
     gap: 0.5rem;
 }
+
+.strip-icon {
+    height: 3vh;
+    width: auto;
+}
