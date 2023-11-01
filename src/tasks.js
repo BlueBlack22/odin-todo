@@ -30,11 +30,19 @@ const tasks = (() => {
         }
     };
 
-    const removeProject = (projectName) => {
+    const deleteProject = (projectName) => {
         for (const i in projectList) {
             if (projectList[i] == projectName && projectName != 'default') {
                 projectList.splice(i, 1);
             }
+        }
+    };
+
+    const deleteTasksInProject = (projectName) => {
+        const indexesToDelete = findIndexByProjectName(projectName);
+        
+        for (const i in indexesToDelete) {
+            deleteTaskByIndex(indexesToDelete[i]);
         }
     };
 
@@ -68,6 +76,10 @@ const tasks = (() => {
 
     const deleteTask = (id) => {
         const index = findIndexByID(id);
+        taskList.splice(index, 1);
+    };
+
+    const deleteTaskByIndex = (index) => {
         taskList.splice(index, 1);
     };
 
@@ -122,7 +134,7 @@ const tasks = (() => {
         changeStatus,
         changeProject,
         createProject,
-        removeProject,
+        deleteProject,
         getProjectName,
         getProjectList
     };
