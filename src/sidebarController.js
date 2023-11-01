@@ -7,7 +7,7 @@ const sidebarController = (() => {
         const projects = tasks.getProjectList();
 
         for (const i in projects) {
-            document.querySelector('.sidebar').appendChild(createProjectBar(projects[i]));
+            document.querySelector('.project-box').appendChild(createProjectBar(projects[i]));
         }
     };
 
@@ -22,14 +22,8 @@ const sidebarController = (() => {
         return strip;        
     };
 
-    const displayAddProject = () => {
-        const strip = createDiv('project-add', 'Add new project');
-        document.querySelector('.sidebar').appendChild(strip);
-    };
-
     return {
-        displayProjects,
-        displayAddProject
+        displayProjects
     };
 })();
 
