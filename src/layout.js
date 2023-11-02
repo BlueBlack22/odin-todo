@@ -28,7 +28,9 @@ function createSidebar() {
 
 function createMainBox() {
     const mainBox = createDiv('main-box');
+    const mainHeader = createDiv('main-header');
     const stripBox = createDiv('strip-box');
+    mainBox.appendChild(mainHeader);
     mainBox.appendChild(stripBox);
 
     return mainBox;

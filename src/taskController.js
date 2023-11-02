@@ -57,12 +57,18 @@ const taskController = (() => {
 
     const displayProjectName = (projectName) => {
         const name = createDiv('project-name', projectName);
-        document.querySelector('.strip-box').appendChild(name);
+        document.querySelector('.main-header').appendChild(name);
+    };
+
+    const displayAddTask = () => {
+        const addBtn = createDiv('new-task', 'Add new task');
+        document.querySelector('.main-header').appendChild(addBtn);
     };
 
     return {
         displayTask,
-        displayProjectName
+        displayProjectName,
+        displayAddTask
     };
 })();
 
