@@ -1,7 +1,5 @@
 import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
-import editImg from "./img/edit.svg";
-import deleteImg from "./img/delete.svg";
 
 const taskController = (() => {
     
@@ -27,14 +25,20 @@ const taskController = (() => {
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
         
-        const editBtn = document.createElement('img');
-        editBtn.src = editImg;
-        editBtn.classList.add('strip-icon');
+        const editBtn = document.createElement('btn');
+        const editIcon = document.createElement('i');
+        editIcon.classList.add('fa-solid');
+        editIcon.classList.add('fa-trash');
+        editBtn.appendChild(editIcon);
+        editBtn.classList.add('strip-button');
         editBtn.addEventListener('click', (e) => console.log('edit'));
 
-        const deleteBtn = document.createElement('img');
-        deleteBtn.src = deleteImg;
-        deleteBtn.classList.add('strip-icon');
+        const deleteBtn = document.createElement('btn');
+        const deleteIcon = document.createElement('i');
+        deleteIcon.classList.add('fa-solid');
+        deleteIcon.classList.add('fa-pen-to-square');
+        deleteBtn.appendChild(deleteIcon);
+        deleteBtn.classList.add('strip-button');
         deleteBtn.addEventListener('click', (e) => console.log('remove'));
 
         left.appendChild(checkBox);

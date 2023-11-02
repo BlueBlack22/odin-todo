@@ -81,7 +81,7 @@ body {
     gap: 0.5rem;
 }
 
-.strip-icon {
-    height: 3vh;
-    width: auto;
+.strip-button {
+    display: flex;
+    align-items: center;
 }
