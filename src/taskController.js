@@ -28,7 +28,7 @@ const taskController = (() => {
         const editBtn = document.createElement('btn');
         const editIcon = document.createElement('i');
         editIcon.classList.add('fa-solid');
-        editIcon.classList.add('fa-trash');
+        editIcon.classList.add('fa-pen-to-square');
         editBtn.appendChild(editIcon);
         editBtn.classList.add('strip-button');
         editBtn.addEventListener('click', (e) => console.log('edit'));
@@ -36,7 +36,7 @@ const taskController = (() => {
         const deleteBtn = document.createElement('btn');
         const deleteIcon = document.createElement('i');
         deleteIcon.classList.add('fa-solid');
-        deleteIcon.classList.add('fa-pen-to-square');
+        deleteIcon.classList.add('fa-trash');
         deleteBtn.appendChild(deleteIcon);
         deleteBtn.classList.add('strip-button');
         deleteBtn.addEventListener('click', (e) => console.log('remove'));

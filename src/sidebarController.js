@@ -17,7 +17,7 @@ const sidebarController = (() => {
         const deleteBtn = document.createElement('btn');
         const deleteIcon = document.createElement('i');
         deleteIcon.classList.add('fa-solid');
-        deleteIcon.classList.add('fa-pen-to-square');
+        deleteIcon.classList.add('fa-trash');
         deleteBtn.appendChild(deleteIcon);
         deleteBtn.classList.add('project-button');
         deleteBtn.addEventListener('click', (e) => console.log('remove'));
