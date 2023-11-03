@@ -93,21 +93,21 @@ const taskModal = (() => {
         priorityLabel.appendChild(prioritySelect);
         priorityDiv.appendChild(priorityLabel);
 
-        form.appendChild(titleDiv);
-        form.appendChild(descDiv);
-        form.appendChild(dateDiv);
-        form.appendChild(projectDiv);
-        form.appendChild(priorityDiv);
-
         const createBtn = document.createElement('button');
         createBtn.setAttribute('id', 'createBtn');
         createBtn.value = 'default';
         createBtn.innerText = 'Create Task';
 
+        form.appendChild(titleDiv);
+        form.appendChild(descDiv);
+        form.appendChild(dateDiv);
+        form.appendChild(projectDiv);
+        form.appendChild(priorityDiv);
+        form.appendChild(createBtn);
+
         modal.appendChild(headerBox);
         modal.appendChild(form);
-        modal.appendChild(createBtn);
-        
+
         return modal;
     };
 

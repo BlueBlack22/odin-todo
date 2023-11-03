@@ -61,7 +61,9 @@ const taskController = (() => {
     };
 
     const displayAddTask = () => {
-        const addBtn = createDiv('new-task', 'Add new task');
+        const addBtn = document.createElement('button');
+        addBtn.classList.add('new-task-btn');
+        addBtn.innerText = 'Add new task';
         document.querySelector('.main-header').appendChild(addBtn);
     };
 
