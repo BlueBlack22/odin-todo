@@ -6,10 +6,17 @@ const taskModal = (() => {
         const modal = document.createElement('dialog');
         modal.setAttribute('id', 'modal');
 
+        const headerBox = createDiv('modal-header-box', undefined);
+
+        const headerText = createDiv('modal-header-text', 'Create new task');
+
         const closeBtn = document.createElement('button');
         closeBtn.classList.add('modal-close-btn');
         closeBtn.innerText = 'x';
         modal.appendChild(closeBtn);
+
+        headerBox.appendChild(headerText);
+        headerBox.appendChild(closeBtn);
 
         const form = document.createElement('form');
 
@@ -57,8 +64,8 @@ const taskModal = (() => {
         defaultOption.text = 'Default Project';
         projectSelect.appendChild(defaultOption);
 
-        const projects = tasks.getTaskList;
-        for (const i = 1; i < projects.length; i++) {
+        const projects = tasks.getProjectList();
+        for (let i = 1; i < projects.length; i++) {
             const newOption = document.createElement('option');
             newOption.text = projects[i];
             projectSelect.appendChild(newOption);
@@ -97,10 +104,10 @@ const taskModal = (() => {
         createBtn.value = 'default';
         createBtn.innerText = 'Create Task';
 
-        modal.appendChild(closeBtn);
+        modal.appendChild(headerBox);
         modal.appendChild(form);
         modal.appendChild(createBtn);
-
+        
         return modal;
     };
 

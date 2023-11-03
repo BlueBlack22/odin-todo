@@ -99,3 +99,35 @@ body {
     display: flex;
     align-items: center;
 }
+
+#modal {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 20vh auto;
+    padding: 1vh;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.modal-header-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header-text {
+    font-size: 1.5rem;
+}
+
+.modal-title>input,
+.modal-desc>input {
+    padding: 12px 20px;
+}
+
+::backdrop {
+    backdrop-filter: blur(5px);
+}
