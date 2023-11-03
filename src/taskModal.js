@@ -13,6 +13,11 @@ const taskModal = (() => {
         const closeBtn = document.createElement('button');
         closeBtn.classList.add('modal-close-btn');
         closeBtn.innerText = 'x';
+
+        closeBtn.addEventListener('click', () => {
+            document.getElementById('modal').close();
+        });
+
         modal.appendChild(closeBtn);
 
         headerBox.appendChild(headerText);

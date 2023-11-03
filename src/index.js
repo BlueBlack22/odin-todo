@@ -22,4 +22,3 @@ taskController.displayTask('default');
 taskController.displayAddTask();
 
 document.getElementById('content').appendChild(taskModal.createModal());
-document.getElementById('modal').showModal();

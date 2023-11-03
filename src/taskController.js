@@ -64,6 +64,11 @@ const taskController = (() => {
         const addBtn = document.createElement('button');
         addBtn.classList.add('new-task-btn');
         addBtn.innerText = 'Add new task';
+
+        addBtn.addEventListener('click', () => {
+            document.getElementById('modal').showModal();
+        });
+
         document.querySelector('.main-header').appendChild(addBtn);
     };
 
