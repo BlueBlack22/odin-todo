@@ -2,8 +2,11 @@ import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
 
 const taskController = (() => {
+    let lastProject = '';
     
     const displayTask = (projectName) => {
+        document.querySelector('.strip-box').innerText = '';
+
         const matchingIndexes = tasks.findIndexByProjectName(projectName);
     
         for (const i in matchingIndexes) {
@@ -56,6 +59,7 @@ const taskController = (() => {
     };
 
     const displayProjectName = (projectName) => {
+        document.querySelector('.main-header').textContent = '';
         const name = createDiv('project-name', projectName);
         document.querySelector('.main-header').appendChild(name);
     };

@@ -1,4 +1,5 @@
 import { createDiv, createPara, createList } from "./domCreators";
+import { taskController } from "./taskController";
 import { tasks } from "./tasks";
 
 const taskModal = (() => {
@@ -33,6 +34,7 @@ const taskModal = (() => {
         titleInput.setAttribute('type', 'text');
         titleInput.setAttribute('id', 'newTitle');
         titleInput.required = true;
+        titleInput.autofocus = true;
         titleDiv.appendChild(titleLabel);
         titleDiv.appendChild(document.createElement('br'));
         titleDiv.appendChild(titleInput);
@@ -55,6 +57,7 @@ const taskModal = (() => {
         const dateInput = document.createElement('input');
         dateInput.setAttribute('type', 'date');
         dateInput.setAttribute('id', 'newDueDate');
+        dateInput.required = true;
         dateDiv.appendChild(dateLabel);
         dateDiv.appendChild(document.createElement('br'));
         dateDiv.appendChild(dateInput);
@@ -63,6 +66,8 @@ const taskModal = (() => {
         const projectLabel = document.createElement('label');
         projectLabel.innerText = 'Assign to project:';
         const projectSelect = document.createElement('select');
+        projectSelect.setAttribute('id', 'projectSelect');
+        projectSelect.required = true;
     
         const defaultOption = document.createElement('option');
         defaultOption.value = 'default';
@@ -82,6 +87,8 @@ const taskModal = (() => {
         const priorityLabel = document.createElement('label');
         priorityLabel.innerText = `Select task's priority:`;
         const prioritySelect = document.createElement('select');
+        prioritySelect.setAttribute('id', 'prioritySelect');
+        prioritySelect.required = true;
 
         const lowOption = document.createElement('option');
         lowOption.text = 'Low';
@@ -100,8 +107,14 @@ const taskModal = (() => {
 
         const createBtn = document.createElement('button');
         createBtn.setAttribute('id', 'createBtn');
-        createBtn.value = 'default';
+        createBtn.type = 'submit';
         createBtn.innerText = 'Create Task';
+
+        form.addEventListener('submit', (e) => {
+            newTaskSubmit(newTitle.value, newDesc.value, newDueDate.value, projectSelect.value, prioritySelect.value);
+            document.getElementById('modal').close();
+            e.preventDefault();
+        })
 
         form.appendChild(titleDiv);
         form.appendChild(descDiv);
@@ -114,6 +127,12 @@ const taskModal = (() => {
         modal.appendChild(form);
 
         return modal;
+    };
+
+    const newTaskSubmit = (title, description, dueDate, project, priority) => {
+        tasks.createTask(title, description, dueDate, priority, false, project);
+        taskController.displayTask(project);
+        taskController.displayProjectName(project);
     };
 
     return {
