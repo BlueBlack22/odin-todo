@@ -28,8 +28,22 @@ const sidebarController = (() => {
         return strip;        
     };
 
+    const createProject = () => {
+        const addBtn = document.createElement('button')
+        addBtn.classList.add = 'project-add';
+        addBtn.innerText = 'Add new project';
+        
+        addEventListener('click', (e) => {
+            console.log('new project');
+        })
+
+        document.querySelector('.sidebar').appendChild(addBtn);
+        
+    }; 
+
     return {
-        displayProjects
+        displayProjects,
+        createProject
     };
 })();
 

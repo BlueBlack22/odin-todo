@@ -20,8 +20,6 @@ function createSidebar() {
     const projectBox = createDiv('project-box', undefined);
     sidebar.appendChild(createDiv('sidebar-header', 'Your projects:'));
     sidebar.appendChild(projectBox);
-    const addBtn = createDiv('project-add', 'Add new project');
-    sidebar.appendChild(addBtn);
 
     return sidebar;
 };
