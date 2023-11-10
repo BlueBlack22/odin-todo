@@ -129,7 +129,8 @@ const tasks = (() => {
 
     return { 
         createTask,
-        deleteTask, 
+        deleteTask,
+        deleteTaskByIndex, 
         getTask, 
         getTaskList,
         findIndexByProjectName,  

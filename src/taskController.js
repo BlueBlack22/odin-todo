@@ -12,12 +12,13 @@ const taskController = (() => {
         for (const i in matchingIndexes) {
             const task = tasks.getTask(matchingIndexes[i]);
     
-            document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.description, task.dueDate));
+            document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.description, task.dueDate, task.id));
         }
     };
     
-    const createTaskStrip = (title, description, dueDate) => {
+    const createTaskStrip = (title, description, dueDate, id) => {
         const strip = createDiv('strip', undefined);
+        strip.setAttribute('data-id', id);
         const left = createDiv('strip-left', undefined);
         const right = createDiv('strip-right', undefined);
 
@@ -42,7 +43,10 @@ const taskController = (() => {
         deleteIcon.classList.add('fa-trash');
         deleteBtn.appendChild(deleteIcon);
         deleteBtn.classList.add('strip-button');
-        deleteBtn.addEventListener('click', (e) => console.log('remove'));
+        deleteBtn.addEventListener('click', (e) => {
+            tasks.deleteTask(strip.dataset.id);
+            displayStripPage('default');
+        });
 
         left.appendChild(checkBox);
         left.appendChild(sTitle);
