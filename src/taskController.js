@@ -3,7 +3,7 @@ import { tasks } from "./tasks";
 
 const taskController = (() => {
     let lastProject = '';
-    
+
     const displayTask = (projectName) => {
         document.querySelector('.strip-box').innerText = '';
 
@@ -76,10 +76,17 @@ const taskController = (() => {
         document.querySelector('.main-header').appendChild(addBtn);
     };
 
+    const displayStripPage = (projectName) => {
+        displayTask(projectName);
+        displayProjectName(projectName);
+        displayAddTask();
+    };
+
     return {
         displayTask,
         displayProjectName,
-        displayAddTask
+        displayAddTask,
+        displayStripPage
     };
 })();
 

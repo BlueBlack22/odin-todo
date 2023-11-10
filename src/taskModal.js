@@ -131,8 +131,7 @@ const taskModal = (() => {
 
     const newTaskSubmit = (title, description, dueDate, project, priority) => {
         tasks.createTask(title, description, dueDate, priority, false, project);
-        taskController.displayTask(project);
-        taskController.displayProjectName(project);
+        taskController.displayStripPage(project);
     };
 
     return {
