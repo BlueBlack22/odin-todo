@@ -8,7 +8,7 @@ import { newTaskModal } from './newTaskModal';
 import { editTaskModal } from './editTaskModal';
 
 createLayout();
-sidebarController.createProject();
+taskController.displayStripPage('default');
 
 tasks.createTask('Go to the gym', 'leg day :(', '2023-11-11', 'low');
 tasks.createTask('Go to sleep1', 'at least 8h', '2023-11-12', 'medium');

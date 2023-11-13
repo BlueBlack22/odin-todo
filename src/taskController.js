@@ -1,6 +1,7 @@
 import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
 import { editTaskModal } from "./editTaskModal";
+import { sidebarController } from "./sidebarController";
 
 const taskController = (() => {
     let lastProject = 'default';
@@ -142,6 +143,7 @@ const taskController = (() => {
         displayProjectName(projectName);
         displayAddTask();
         changeLastProject(projectName);
+        sidebarController.displayProjects();
     };
 
     return {
