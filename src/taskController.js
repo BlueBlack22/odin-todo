@@ -71,10 +71,12 @@ const taskController = (() => {
         strip.addEventListener('click', () => {
             strip.classList.toggle('desc-active');
             let content = strip.nextElementSibling;
-            if (content.style.display === 'block') {
-                content.style.display = 'none';
-            } else {
-                content.style.display = 'block';
+            if (content !== null) {
+                if (content.style.display === 'block') {
+                    content.style.display = 'none';
+                } else {
+                    content.style.display = 'block';
+                }
             }
         });
 
