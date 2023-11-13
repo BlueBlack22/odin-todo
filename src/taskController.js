@@ -69,7 +69,6 @@ const taskController = (() => {
         strip.appendChild(right);
 
         strip.addEventListener('click', () => {
-            console.log('wtf');
             strip.classList.toggle('desc-active');
             let content = strip.nextElementSibling;
             if (content.style.display === 'block') {
