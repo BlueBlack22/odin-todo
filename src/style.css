@@ -100,7 +100,8 @@ body {
     align-items: center;
 }
 
-#new-modal {
+#new-modal,
+#edit-modal {
     left: 0;
     right: 0;
     top: 0;
