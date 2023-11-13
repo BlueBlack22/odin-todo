@@ -1,4 +1,5 @@
 import { createDiv, createPara, createList } from "./domCreators";
+import { taskController } from "./taskController";
 import { tasks } from "./tasks";
 
 const sidebarController = (() => {
@@ -24,6 +25,10 @@ const sidebarController = (() => {
 
         strip.appendChild(createDiv('project-bar-name', name));
         strip.appendChild(deleteBtn);
+
+        strip.addEventListener('click', (e) => {
+            taskController.displayStripPage(name);
+        });
 
         return strip;        
     };
