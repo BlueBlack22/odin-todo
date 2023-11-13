@@ -89,34 +89,13 @@ const tasks = (() => {
         taskList.splice(index, 1);
     };
 
-    const changeTitle = (id, newTitle) => {
+    const editTask = (id, title, description, dueDate, priority, project) => {
         const index = findIndexByID(id);
-        taskList[index].title = newTitle;
-    };
-
-    const changeDescription = (id, newDesc) => {
-        const index = findIndexByID(id);
-        taskList[index].description = newDesc;
-    };
-
-    const changeDueDate = (id, newDate) => {
-        const index = findIndexByID(id);
-        taskList[index].dueDate = newDate;
-    };
-
-    const changePriority = (id, newPriority) => {
-        const index = findIndexByID(id);
-        taskList[index].priority = newPriority;
-    };
-
-    const changeStatus = (id, newStatus) => {
-        const index = findIndexByID(id);
-        taskList[index].status = newStatus;
-    };
-
-    const changeProject = (id, newProject) => {
-        const index = findIndexByID(id);
-        taskList[index].project = newProject;
+        taskList[index].title = title;
+        taskList[index].description = description,
+        taskList[index].dueDate = dueDate;
+        taskList[index].priority = priority;
+        taskList[index].project = project;
     };
 
     const getTask = (index) => {
@@ -133,13 +112,9 @@ const tasks = (() => {
         deleteTaskByIndex, 
         getTask, 
         getTaskList,
+        findIndexByID,
         findIndexByProjectName,  
-        changeTitle,
-        changeDescription,
-        changeDueDate,
-        changePriority,
-        changeStatus,
-        changeProject,
+        editTask,
         createProject,
         deleteProject,
         getProjectName,

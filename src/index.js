@@ -4,7 +4,8 @@ import { tasks } from './tasks';
 import { sidebarController } from './sidebarController';
 import { createDiv, createPara, createList } from "./domCreators";
 import { taskController } from './taskController';
-import { newTaskModal } from './taskModal';
+import { newTaskModal } from './newTaskModal';
+import { editTaskModal } from './editTaskModal';
 
 createLayout();
 sidebarController.createProject();
@@ -23,3 +24,4 @@ taskController.displayTask('default');
 taskController.displayAddTask();
 
 document.getElementById('content').appendChild(newTaskModal.createNewTaskModal());
+document.getElementById('content').appendChild(editTaskModal.createEditTaskModal(''));

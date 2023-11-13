@@ -33,7 +33,7 @@ const sidebarController = (() => {
         addBtn.classList.add = 'project-add';
         addBtn.innerText = 'Add new project';
         
-        addEventListener('click', (e) => {
+        addBtn.addEventListener('click', (e) => {
             console.log('new project');
         })
 

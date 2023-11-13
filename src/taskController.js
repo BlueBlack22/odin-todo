@@ -1,5 +1,6 @@
 import { createDiv, createPara, createList } from "./domCreators";
 import { tasks } from "./tasks";
+import { editTaskModal } from "./editTaskModal";
 
 const taskController = (() => {
     let lastProject = '';
@@ -35,7 +36,11 @@ const taskController = (() => {
         editIcon.classList.add('fa-pen-to-square');
         editBtn.appendChild(editIcon);
         editBtn.classList.add('strip-button');
-        editBtn.addEventListener('click', (e) => console.log('edit'));
+        editBtn.addEventListener('click', (e) => {
+            document.getElementById('edit-modal').remove();
+            document.getElementById('content').appendChild(editTaskModal.createEditTaskModal(id));
+            document.getElementById('edit-modal').showModal();
+        });
 
         const deleteBtn = document.createElement('btn');
         const deleteIcon = document.createElement('i');
