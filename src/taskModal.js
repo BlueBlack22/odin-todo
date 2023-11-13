@@ -2,10 +2,10 @@ import { createDiv, createPara, createList } from "./domCreators";
 import { taskController } from "./taskController";
 import { tasks } from "./tasks";
 
-const taskModal = (() => {
-    const createModal = () => {
+const newTaskModal = (() => {
+    const createNewTaskModal = () => {
         const modal = document.createElement('dialog');
-        modal.setAttribute('id', 'modal');
+        modal.setAttribute('id', 'new-modal');
 
         const headerBox = createDiv('modal-header-box', undefined);
 
@@ -16,7 +16,7 @@ const taskModal = (() => {
         closeBtn.innerText = 'x';
 
         closeBtn.addEventListener('click', () => {
-            document.getElementById('modal').close();
+            document.getElementById('new-modal').close();
         });
 
         modal.appendChild(closeBtn);
@@ -112,7 +112,7 @@ const taskModal = (() => {
 
         form.addEventListener('submit', (e) => {
             newTaskSubmit(newTitle.value, newDesc.value, newDueDate.value, projectSelect.value, prioritySelect.value);
-            document.getElementById('modal').close();
+            document.getElementById('new-modal').close();
             e.preventDefault();
         })
 
@@ -135,8 +135,8 @@ const taskModal = (() => {
     };
 
     return {
-        createModal
+        createNewTaskModal
     }
 })();
 
-export { taskModal };
+export { newTaskModal };
