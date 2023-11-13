@@ -24,7 +24,10 @@ const sidebarController = (() => {
             deleteIcon.classList.add('fa-trash');
             deleteBtn.appendChild(deleteIcon);
             deleteBtn.classList.add('project-button');
-            deleteBtn.addEventListener('click', (e) => console.log('remove'));
+            deleteBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                console.log('remove');
+            });
             strip.appendChild(deleteBtn);
         }
 

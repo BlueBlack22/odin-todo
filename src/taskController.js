@@ -23,7 +23,7 @@ const taskController = (() => {
     };
 
     const createTaskStrip = (title, dueDate, id) => {
-        const strip = document.createElement('button');
+        const strip = document.createElement('div');
         strip.classList.add('strip');
         strip.setAttribute('data-id', id);
         const left = createDiv('strip-left', undefined);
@@ -42,6 +42,7 @@ const taskController = (() => {
         editBtn.appendChild(editIcon);
         editBtn.classList.add('strip-button');
         editBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             document.getElementById('edit-modal').remove();
             document.getElementById('content').appendChild(editTaskModal.createEditTaskModal(id));
             document.getElementById('edit-modal').showModal();
@@ -54,6 +55,7 @@ const taskController = (() => {
         deleteBtn.appendChild(deleteIcon);
         deleteBtn.classList.add('strip-button');
         deleteBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
             tasks.deleteTask(strip.dataset.id);
             displayStripPage('default');
         });
