@@ -14,21 +14,22 @@ const taskController = (() => {
             for (const i in matchingIndexes) {
                 const task = tasks.getTask(matchingIndexes[i]);
         
-                document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.description, task.dueDate, task.id));
+                document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.dueDate, task.id));
+                document.querySelector('.strip-box').appendChild(createDescBox(task.description));
             }
         } else {
             document.querySelector('.strip-box').appendChild(createDiv('empty-strip', 'There are no tasks in this project yet.'));
         }
     };
-    
-    const createTaskStrip = (title, description, dueDate, id) => {
-        const strip = createDiv('strip', undefined);
+
+    const createTaskStrip = (title, dueDate, id) => {
+        const strip = document.createElement('button');
+        strip.classList.add('strip');
         strip.setAttribute('data-id', id);
         const left = createDiv('strip-left', undefined);
         const right = createDiv('strip-right', undefined);
 
         const sTitle = createDiv('strip-title', title);
-        const sDesc = createDiv('strip-desc', description);
         const sDate = createDiv('strip-date', dueDate);
         
         const checkBox = document.createElement('input');
@@ -59,7 +60,6 @@ const taskController = (() => {
 
         left.appendChild(checkBox);
         left.appendChild(sTitle);
-        left.appendChild(sDesc);
 
         right.appendChild(sDate);
         right.appendChild(editBtn);
@@ -68,7 +68,27 @@ const taskController = (() => {
         strip.appendChild(left);
         strip.appendChild(right);
 
+        strip.addEventListener('click', () => {
+            console.log('wtf');
+            strip.classList.toggle('desc-active');
+            let content = strip.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+
         return strip;
+    };
+
+    const createDescBox = (description) => {
+        const descBox = createDiv('desc-box', undefined);
+        const desc = document.createElement('p');
+        desc.innerText = description;
+        descBox.appendChild(desc);
+
+        return descBox;
     };
 
     const displayProjectName = (projectName) => {
