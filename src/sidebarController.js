@@ -15,16 +15,18 @@ const sidebarController = (() => {
     const createProjectBar = (name) => {
         const strip = createDiv('project-bar', undefined);
 
-        const deleteBtn = document.createElement('btn');
-        const deleteIcon = document.createElement('i');
-        deleteIcon.classList.add('fa-solid');
-        deleteIcon.classList.add('fa-trash');
-        deleteBtn.appendChild(deleteIcon);
-        deleteBtn.classList.add('project-button');
-        deleteBtn.addEventListener('click', (e) => console.log('remove'));
-
         strip.appendChild(createDiv('project-bar-name', name));
-        strip.appendChild(deleteBtn);
+
+        if (name !== 'default') {
+            const deleteBtn = document.createElement('btn');
+            const deleteIcon = document.createElement('i');
+            deleteIcon.classList.add('fa-solid');
+            deleteIcon.classList.add('fa-trash');
+            deleteBtn.appendChild(deleteIcon);
+            deleteBtn.classList.add('project-button');
+            deleteBtn.addEventListener('click', (e) => console.log('remove'));
+            strip.appendChild(deleteBtn);
+        }
 
         strip.addEventListener('click', (e) => {
             taskController.displayStripPage(name);
