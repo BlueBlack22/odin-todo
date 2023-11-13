@@ -80,6 +80,7 @@ body {
 }
 
 .strip {
+    background-color: #f1f1f1;
     width: 100%;
     align-items: center;
     border: 1px solid black;
@@ -88,6 +89,14 @@ body {
     display: flex;
     justify-content: space-between;
     height: 3rem;
+}
+
+.status-completed {
+    background-color: slategray;
+}
+
+.status-completed>.strip-left {
+    text-decoration: line-through;
 }
 
 .strip-left,

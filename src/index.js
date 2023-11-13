@@ -12,7 +12,7 @@ sidebarController.createProject();
 
 tasks.createTask('Go to the gym', 'leg day :(', '2023-11-11', 'low');
 tasks.createTask('Go to sleep1', 'at least 8h', '2023-11-12', 'medium');
-tasks.createTask('Go to sleep2', 'at least 8h', '2023-11-13', 'medium');
+tasks.createTask('Go to sleep2', 'at least 8h', '2023-11-13', 'medium', true);
 tasks.createTask('Go to sleep3', 'at least 8h', '2023-11-14', 'medium');
 
 tasks.createProject('test');

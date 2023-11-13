@@ -98,6 +98,11 @@ const tasks = (() => {
         taskList[index].project = project;
     };
 
+    const editStatus = (id, status) => {
+        const index = findIndexByID(id);
+        taskList[index].status = status;
+    };
+
     const getTask = (index) => {
         return taskList[index];
     };
@@ -115,6 +120,7 @@ const tasks = (() => {
         findIndexByID,
         findIndexByProjectName,  
         editTask,
+        editStatus,
         createProject,
         deleteProject,
         getProjectName,

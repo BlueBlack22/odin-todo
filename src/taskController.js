@@ -14,7 +14,7 @@ const taskController = (() => {
             for (const i in matchingIndexes) {
                 const task = tasks.getTask(matchingIndexes[i]);
         
-                document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.dueDate, task.id));
+                document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.dueDate, task.status, task.id));
                 document.querySelector('.strip-box').appendChild(createDescBox(task.description));
             }
         } else {
@@ -22,10 +22,14 @@ const taskController = (() => {
         }
     };
 
-    const createTaskStrip = (title, dueDate, id) => {
+    const createTaskStrip = (title, dueDate, status, id) => {
         const strip = document.createElement('div');
         strip.classList.add('strip');
         strip.setAttribute('data-id', id);
+        if (status === true ) {
+            strip.classList.add('status-completed');
+        }
+
         const left = createDiv('strip-left', undefined);
         const right = createDiv('strip-right', undefined);
 
@@ -34,6 +38,19 @@ const taskController = (() => {
         
         const checkBox = document.createElement('input');
         checkBox.setAttribute('type', 'checkbox');
+        checkBox.name = 'status-checkbox';
+        checkBox.checked = status;
+        checkBox.addEventListener('change', (e) => {
+            if (checkBox.checked == true) {
+                tasks.editStatus(id, true);
+            } else {
+                tasks.editStatus(id, false);
+            }
+            displayStripPage('default');
+        });
+        checkBox.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
         
         const editBtn = document.createElement('btn');
         const editIcon = document.createElement('i');
