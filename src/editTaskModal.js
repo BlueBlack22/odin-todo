@@ -94,6 +94,9 @@ const editTaskModal = (() => {
         for (let i = 1; i < projects.length; i++) {
             const newOption = document.createElement('option');
             newOption.text = projects[i];
+            if (task.project === projects[i]) {
+                newOption.selected = true;
+            }
             projectSelect.appendChild(newOption);
         }
         projectSelect.value = task.project;

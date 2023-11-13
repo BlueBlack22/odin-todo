@@ -3,7 +3,15 @@ import { tasks } from "./tasks";
 import { editTaskModal } from "./editTaskModal";
 
 const taskController = (() => {
-    let lastProject = '';
+    let lastProject = 'default';
+
+    const changeLastProject = (project) => {
+        lastProject = project;
+    };
+
+    const getLastProject = () => {
+        return lastProject;
+    };
 
     const displayTask = (projectName) => {
         document.querySelector('.strip-box').innerText = '';
@@ -46,7 +54,7 @@ const taskController = (() => {
             } else {
                 tasks.editStatus(id, false);
             }
-            displayStripPage('default');
+            displayStripPage(lastProject);
         });
         checkBox.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -74,7 +82,7 @@ const taskController = (() => {
         deleteBtn.addEventListener('click', (e) => {
             e.stopPropagation();
             tasks.deleteTask(strip.dataset.id);
-            displayStripPage('default');
+            displayStripPage(lastProject);
         });
 
         left.appendChild(checkBox);
@@ -133,13 +141,15 @@ const taskController = (() => {
         displayTask(projectName);
         displayProjectName(projectName);
         displayAddTask();
+        changeLastProject(projectName);
     };
 
     return {
         displayTask,
         displayProjectName,
         displayAddTask,
-        displayStripPage
+        displayStripPage,
+        getLastProject
     };
 })();
 
