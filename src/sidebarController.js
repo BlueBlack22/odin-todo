@@ -35,7 +35,7 @@ const sidebarController = (() => {
         
         addBtn.addEventListener('click', (e) => {
             console.log('new project');
-        })
+        });
 
         document.querySelector('.sidebar').appendChild(addBtn);
         

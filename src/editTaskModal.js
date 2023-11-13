@@ -119,7 +119,13 @@ const editTaskModal = (() => {
         highOption.text = 'High';
         prioritySelect.appendChild(highOption);
 
-        prioritySelect.value = task.priority;
+        if (task.priority === 'low') {
+            lowOption.selected = true;
+        } else if (task.priority === 'medium') {
+            mediumOption.selected = true;
+        } else if (task.priority === 'high') {
+            highOption.selected = true;
+        }
 
         priorityLabel.appendChild(prioritySelect);
         priorityDiv.appendChild(priorityLabel);
@@ -130,8 +136,7 @@ const editTaskModal = (() => {
         createBtn.innerText = 'Edit Task';
 
         form.addEventListener('submit', (e) => {
-            console.log(editTitle.value, editDesc.value, editDueDate.value, projectSelect.value, prioritySelect.value);
-            editTask(id, editTitle.value, editDesc.value, editDueDate.value, projectSelect.value, prioritySelect.value);
+            editTask(id, editTitle.value, editDesc.value, editDueDate.value, projectSelect.value, prioritySelect.value.toLowerCase());
             document.getElementById('edit-modal').close();
             e.preventDefault();
         })
