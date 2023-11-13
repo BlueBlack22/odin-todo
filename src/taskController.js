@@ -9,11 +9,15 @@ const taskController = (() => {
         document.querySelector('.strip-box').innerText = '';
 
         const matchingIndexes = tasks.findIndexByProjectName(projectName);
-    
-        for (const i in matchingIndexes) {
-            const task = tasks.getTask(matchingIndexes[i]);
-    
-            document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.description, task.dueDate, task.id));
+        
+        if (matchingIndexes.length > 0) {
+            for (const i in matchingIndexes) {
+                const task = tasks.getTask(matchingIndexes[i]);
+        
+                document.querySelector('.strip-box').appendChild(createTaskStrip(task.title, task.description, task.dueDate, task.id));
+            }
+        } else {
+            document.querySelector('.strip-box').appendChild(createDiv('empty-strip', 'There are no tasks in this project yet.'));
         }
     };
     
