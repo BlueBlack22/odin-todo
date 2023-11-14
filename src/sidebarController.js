@@ -1,6 +1,7 @@
 import { createDiv, createPara, createList } from "./domCreators";
 import { taskController } from "./taskController";
 import { tasks } from "./tasks";
+import { deleteProjectModal } from "./deleteProjectModal";
 
 const sidebarController = (() => {
 
@@ -32,7 +33,9 @@ const sidebarController = (() => {
             deleteBtn.classList.add('project-button');
             deleteBtn.addEventListener('click', (e) => {
                 e.stopPropagation();
-                console.log('remove');
+                document.getElementById('delete-modal').remove();
+                document.getElementById('content').appendChild(deleteProjectModal.createDeleteProjectModal(name));
+                document.getElementById('delete-modal').showModal();
             });
             strip.appendChild(deleteBtn);
         }

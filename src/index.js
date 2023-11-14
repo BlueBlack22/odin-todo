@@ -6,6 +6,7 @@ import { createDiv, createPara, createList } from "./domCreators";
 import { taskController } from './taskController';
 import { newTaskModal } from './newTaskModal';
 import { editTaskModal } from './editTaskModal';
+import { deleteProjectModal } from './deleteProjectModal';
 
 createLayout();
 taskController.displayStripPage('default');
@@ -24,3 +25,4 @@ taskController.displayAddTask();
 
 document.getElementById('content').appendChild(newTaskModal.createNewTaskModal());
 document.getElementById('content').appendChild(editTaskModal.createEditTaskModal(''));
+document.getElementById('content').appendChild(deleteProjectModal.createDeleteProjectModal(''));
