@@ -123,7 +123,8 @@ body {
 }
 
 #new-modal,
-#edit-modal {
+#edit-modal,
+#delete-modal {
     left: 0;
     right: 0;
     top: 0;
