@@ -139,6 +139,10 @@ const taskController = (() => {
     };
 
     const displayStripPage = (projectName) => {
+        if (projectName === undefined || projectName === '') {
+            projectName = lastProject;
+        }
+
         displayTask(projectName);
         displayProjectName(projectName);
         displayAddTask();

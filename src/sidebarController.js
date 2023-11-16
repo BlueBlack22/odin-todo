@@ -73,11 +73,21 @@ const sidebarController = (() => {
         cancelBtn.innerText = 'Cancel';
         cancelBtn.classList.add('project-btn');
         cancelBtn.classList.add('project-cancel');
+        cancelBtn.addEventListener('click', () => {
+            taskController.displayStripPage();
+        });
 
         const confirmBtn = document.createElement('button');
         confirmBtn.innerText = 'Confirm';
         confirmBtn.classList.add('project-btn');
         confirmBtn.classList.add('project-confirm');
+
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            tasks.createProject(newProject.value);
+            taskController.displayStripPage(newProject.value);
+        });
 
         form.appendChild(nameInput);
         form.appendChild(cancelBtn);
